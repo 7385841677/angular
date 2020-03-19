@@ -1,0 +1,29 @@
+<div class="col-xs-4 test1">
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>
+              Employee Data
+            </h4>
+          </div>
+          <table class="table table-bordered table-sm" scrollY=true maxHeight='30' bordered=true>
+            <thead>
+              <tr>
+                <th class="col-sm-1">#</th><th class="col-sm-2">Employee ID</th><th class="col-sm-2">Employee Name</th><th class="col-sm-2">Delete</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="this.employeeManagenentService.employee != null">
+              <tr *ngFor="let ele of  this.employeeManagenentService.employee; index as i">
+                <td class="col-sm-1">{{i+1}}</td>
+                <td class="col-sm-2">{{ele.empId}}</td>
+                <td class="col-sm-2">{{ele.empName}}</td>
+                <td class="col-sm-2"><button (click)="deleteEmployee(ele.empId)" class="btn btn-danger">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+</div>
+
